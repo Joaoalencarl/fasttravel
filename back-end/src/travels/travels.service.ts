@@ -51,11 +51,13 @@ export class TravelsService
       
       if ( startDate )
       {
+        this.check_valid_isodatetime( startDate );
         query.AND.push( { startDate: { gte: startDate } } );
       }
 
       if ( endDate )
       {
+        this.check_valid_isodatetime( endDate );
         query.AND.push( { endDate: { lte: endDate } } )
       }
     }
